@@ -1,4 +1,4 @@
-package com.www.mpaasdemo;
+package com.mpaas.demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
