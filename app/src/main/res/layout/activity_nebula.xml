@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.MainActivity">
+    tools:context=".ui.activity.NebulaActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -15,8 +15,23 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="H5容器小程序"
-            android:onClick="onClickH5"/>
+            android:onClick="onClickNebulaUC"
+            android:text="Nebula UC内核打开"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNebulaChrome"
+            android:text="Nebula Chrome内核打开"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickWebView"
+            android:text="Android WebView打开"
+            android:textAllCaps="false" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.core.widget.NestedScrollView>
