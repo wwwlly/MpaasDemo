@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.alipay.apollo.baseline.config'
 }
 
 android {
@@ -21,12 +22,14 @@ android {
 
     signingConfigs {
         release {
+            v1SigningEnabled true
             keyAlias 'mpaas123'
             keyPassword 'mpaas123'
             storeFile file('mpaas_keystore.jks')
             storePassword 'mpaas123'
         }
         debug {
+            v1SigningEnabled true
             keyAlias 'mpaas123'
             keyPassword 'mpaas123'
             storeFile file('mpaas_keystore.jks')
@@ -48,7 +51,9 @@ android {
 
 dependencies {
 
+    implementation platform("com.mpaas.android:$mpaas_artifact:$mpaas_baseline")
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+//    implementation 'com.mpaas.android:nebula'
 }
