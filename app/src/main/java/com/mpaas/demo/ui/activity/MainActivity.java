@@ -2,7 +2,6 @@ package com.mpaas.demo.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickH5(View view) {
-        Intent intent = new Intent(this, NebulaActivity.class);
-        startActivity(intent);
+        NebulaActivity.startActivity(this, "https://tech.antfin.com");
     }
 }

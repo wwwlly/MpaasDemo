@@ -32,6 +32,11 @@
         <activity
             android:name=".ui.activity.WebActivity"
             android:label="WebView" />
+
+        <!--UC开发者Key-->
+        <meta-data
+            android:name="UCSDKAppKey"
+            android:value="JJQ/FLbHKX+ETiFNpCcb0fqjPfQ+JnjGBxDaqUm0MDcNATUVfsVrSh4KHq8of4/pFud/TDgjKf8891LpDlGG4w==" />
     </application>
 
 </manifest>

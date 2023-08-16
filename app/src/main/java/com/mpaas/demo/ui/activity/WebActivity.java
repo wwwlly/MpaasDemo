@@ -25,7 +25,9 @@ public class WebActivity extends AppCompatActivity {
 
         initWebView();
 
-        webView.loadUrl("https://www.baidu.com");
+        String url = getIntent().getStringExtra("url");
+        //"https://www.baidu.com"
+        webView.loadUrl(url);
     }
 
     private void initWebView() {
