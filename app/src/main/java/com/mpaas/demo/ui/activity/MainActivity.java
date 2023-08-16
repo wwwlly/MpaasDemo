@@ -15,7 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * 77700002
+     * https://tech.antfin.com
+     */
     public void onClickH5(View view) {
-        NebulaActivity.startActivity(this, "https://tech.antfin.com");
+        NebulaActivity.startActivity(this, "77700002");
     }
 }
