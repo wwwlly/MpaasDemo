@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 77700002
      * https://tech.antfin.com
+     * https://mcube.mpaas.accelerate.aliyuncs.com/ALIPUBA1220A9191115-default/77700002/0.0.0.2_all/nebula/fallback/www/index.html
      */
     public void onClickH5(View view) {
         NebulaActivity.startActivity(this, "77700002");

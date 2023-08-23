@@ -46,7 +46,7 @@ public class NebulaActivity extends AppCompatActivity {
     }
 
     public void onClickNebulaUC(View view) {
-        MPNebula.startUrl(editText.getText().toString());
+        MPNebula.startApp(editText.getText().toString());
     }
 
     public void onClickNebulaChrome(View view) {

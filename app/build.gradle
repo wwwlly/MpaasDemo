@@ -57,4 +57,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.mpaas.android:nebula'
     implementation 'com.mpaas.android:uccore'
+    implementation ('com.alipay.android.phone.wallet:nebulaucsdk-build:888.3.22.2.61.230413102925@aar'){
+        force = true
+    }
 }
