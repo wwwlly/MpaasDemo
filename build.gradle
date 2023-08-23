@@ -17,7 +17,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.0'
-        classpath 'com.android.boost.easyconfig:easyconfig:2.6.5'
+        classpath 'com.android.boost.easyconfig:easyconfig:2.8.0'
     }
 }
 
