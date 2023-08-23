@@ -42,6 +42,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug { signingConfig signingConfigs.debug }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -55,9 +56,13 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    //H5容器
     implementation 'com.mpaas.android:nebula'
+    //UC内核
     implementation 'com.mpaas.android:uccore'
-    implementation ('com.alipay.android.phone.wallet:nebulaucsdk-build:888.3.22.2.61.230413102925@aar'){
+    implementation('com.alipay.android.phone.wallet:nebulaucsdk-build:888.3.22.2.61.230413102925@aar') {
         force = true
     }
+    //蚂蚁卡片
+    implementation 'com.mpaas.android:cube-card'
 }

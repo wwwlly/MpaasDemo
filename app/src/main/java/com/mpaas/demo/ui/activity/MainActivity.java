@@ -23,4 +23,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClickH5(View view) {
         NebulaActivity.startActivity(this, "77700002");
     }
+
+    public void onClickCube(View view) {
+        AntCubActivity.startActivity(this);
+    }
 }

@@ -33,6 +33,32 @@
             android:name=".ui.activity.WebActivity"
             android:label="WebView" />
 
+        <activity
+            android:name=".ui.activity.AntCubActivity"
+            android:label="AntCub" />
+
+        <!-- 蚂蚁动态卡片抓取 C 层闪退必备 -->
+        <receiver
+            android:name="com.alipay.mobile.common.logging.process.LogReceiverInToolsProcess"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":tools">
+            <intent-filter>
+                <action android:name="${applicationId}.monitor.command" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.alipay.mobile.logmonitor.ClientMonitorWakeupReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":push">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="${applicationId}.push.action.CHECK" />
+                <action android:name="${applicationId}.monitor.command" />
+            </intent-filter>
+        </receiver>
+
         <!--UC开发者Key-->
         <meta-data
             android:name="UCSDKAppKey"

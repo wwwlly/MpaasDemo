@@ -17,6 +17,12 @@
             android:layout_height="wrap_content"
             android:text="H5容器小程序"
             android:onClick="onClickH5"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="蚂蚁卡片"
+            android:onClick="onClickCube"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.core.widget.NestedScrollView>
