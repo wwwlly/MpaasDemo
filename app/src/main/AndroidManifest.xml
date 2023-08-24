@@ -37,6 +37,10 @@
             android:name=".ui.activity.AntCubActivity"
             android:label="AntCub" />
 
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <!-- 蚂蚁动态卡片抓取 C 层闪退必备 -->
         <receiver
             android:name="com.alipay.mobile.common.logging.process.LogReceiverInToolsProcess"
