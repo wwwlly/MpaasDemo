@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,13 +18,16 @@ import com.mpaas.nebula.adapter.api.MPNebula;
 
 public class NebulaActivity extends AppCompatActivity {
 
-    private String url;
+    private static final int TYPE_APP_ID = 0;
+    private static final int TYPE_URL = 1;
 
     private EditText editText;
+    private RadioGroup radioGroup;
 
-    public static void startActivity(Activity activity, String url) {
+    private int type = TYPE_URL;
+
+    public static void startActivity(Activity activity) {
         Intent intent = new Intent(activity, NebulaActivity.class);
-        intent.putExtra("url", url);
         activity.startActivity(intent);
     }
 
@@ -32,32 +36,79 @@ public class NebulaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nebula);
 
-        url = getIntent().getStringExtra("url");
-        if (TextUtils.isEmpty(url)) {
-            Logger.d("url is empty");
-            finish();
-            return;
-        }
-
-        Logger.d("url : " + url);
-
         editText = findViewById(R.id.editText);
-        editText.setText(url);
+        radioGroup = findViewById(R.id.radio_group);
+
+        initViews();
+    }
+
+    /**
+     * 77700002
+     * https://tech.antfin.com
+     * https://mcube.mpaas.accelerate.aliyuncs.com/ALIPUBA1220A9191115-default/77700002/0.0.0.2_all/nebula/fallback/www/index.html
+     */
+    private void initViews() {
+        editText.setText("77700002");
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.btn_id:
+                        type = TYPE_APP_ID;
+                        break;
+                    case R.id.btn_url:
+                        type = TYPE_URL;
+                        break;
+                }
+
+                Logger.d("type: " + type);
+            }
+        });
+    }
+
+    private void nebulaStart(int type, String text, Bundle bundle) {
+        switch (type) {
+            case TYPE_APP_ID:
+                MPNebula.startApp(text, bundle);
+                break;
+            case TYPE_URL:
+                MPNebula.startUrl(text, bundle);
+                break;
+        }
     }
 
     public void onClickNebulaUC(View view) {
-        MPNebula.startApp(editText.getText().toString());
+        String text = editText.getText().toString();
+        if (TextUtils.isEmpty(text)) {
+            Logger.d("editText is empty");
+            return;
+        }
+
+        nebulaStart(type, text, null);
     }
 
     public void onClickNebulaChrome(View view) {
+        String text = editText.getText().toString();
+        if (TextUtils.isEmpty(text)) {
+            Logger.d("editText is empty");
+            return;
+        }
+
         Bundle bundle = new Bundle();
         bundle.putBoolean(H5Param.USE_SYS_WEBVIEW, false);
-        MPNebula.startUrl(editText.getText().toString(), bundle);
+        nebulaStart(type, text, bundle);
     }
 
     public void onClickWebView(View view) {
+        String text = editText.getText().toString();
+        if (TextUtils.isEmpty(text)) {
+            Logger.d("editText is empty");
+            return;
+        }
+
         Intent intent = new Intent(this, WebActivity.class);
-        intent.putExtra("url", editText.getText().toString());
+        intent.putExtra("url", text);
         startActivity(intent);
     }
 }
