@@ -4,8 +4,8 @@ buildscript {
     ext.mpaas_artifact = "mpaas-baseline"
     ext.mpaas_baseline = "10.2.3-26"
     repositories {
-        google()
-        jcenter()
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
         maven {
             url 'http://mvn.cloud.alipay.com/nexus/content/repositories/releases/'
             name 'alipay'
@@ -14,18 +14,22 @@ buildscript {
                 password 'mrk8929'
             }
         }
+
+        google()
+        jcenter()
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.0'
         classpath 'com.android.boost.easyconfig:easyconfig:2.8.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 allprojects {
     repositories {
-        google()
-        jcenter()
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
         maven {
             url 'http://mvn.cloud.alipay.com/nexus/content/repositories/releases/'
             name 'alipay'
@@ -34,6 +38,9 @@ allprojects {
                 password 'mrk8929'
             }
         }
+
+        google()
+        jcenter()
     }
 }
 

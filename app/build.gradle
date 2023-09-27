@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'com.alipay.apollo.baseline.config'
+    id 'kotlin-android'//加上
+    id 'kotlin-android-extensions'//加上
 }
 
 android {
@@ -66,6 +68,11 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    //kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.1'
+
     //H5容器
     implementation 'com.mpaas.android:nebula'
     //UC内核
