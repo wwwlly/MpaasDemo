@@ -1,5 +1,6 @@
 apply plugin: 'com.alipay.apollo.optimize'
 buildscript {
+    ext.kotlin_version = '1.6.10'
     ext.mpaas_artifact = "mpaas-baseline"
     ext.mpaas_baseline = "10.2.3-26"
     repositories {
