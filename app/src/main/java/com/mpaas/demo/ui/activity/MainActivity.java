@@ -22,4 +22,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClickCube(View view) {
         AntCubActivity.startActivity(this);
     }
+
+    public void onClickUpgrade(View view) {
+        UpgradeActivity.startActivity(this);
+    }
 }
