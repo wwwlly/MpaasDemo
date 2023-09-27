@@ -1,4 +1,4 @@
-package com.mpaas.demo.ui.activity;
+package com.mpaas.demoa.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,8 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alipay.mobile.h5container.api.H5Param;
-import com.mpaas.demo.R;
-import com.mpaas.demo.utils.Logger;
+import com.mpaas.demoa.R;
+import com.mpaas.demoa.utils.Logger;
 import com.mpaas.nebula.adapter.api.MPNebula;
 
 public class NebulaActivity extends AppCompatActivity {

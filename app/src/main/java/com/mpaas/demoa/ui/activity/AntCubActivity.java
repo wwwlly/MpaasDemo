@@ -1,4 +1,4 @@
-package com.mpaas.demo.ui.activity;
+package com.mpaas.demoa.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.antcube.CubeService;
 import com.antfin.cube.antcrystal.api.CCardCallback;
 import com.antfin.cube.antcrystal.api.CCardType;
@@ -17,7 +16,7 @@ import com.antfin.cube.antcrystal.api.CubeCardConfig;
 import com.antfin.cube.antcrystal.api.CubeCardResultCode;
 import com.antfin.cube.antcrystal.api.CubeView;
 import com.antfin.cube.platform.systeminfo.MFSystemInfo;
-import com.mpaas.demo.R;
+import com.mpaas.demoa.R;
 import com.mpaas.mas.adapter.api.MPLogger;
 
 public class AntCubActivity extends AppCompatActivity {

@@ -1,12 +1,12 @@
-package com.mpaas.demo.callback;
+package com.mpaas.demoa.callback;
 
 import android.widget.Toast;
 
 import com.alipay.mobile.android.security.upgrade.download.normal.UpgradeDownloadCallback;
 import com.alipay.mobile.android.security.upgrade.download.normal.UpgradeDownloadRequest;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
-import com.mpaas.demo.R;
-import com.mpaas.demo.ui.activity.UpgradeActivity;
+import com.mpaas.demoa.R;
+import com.mpaas.demoa.ui.activity.UpgradeActivity;
 
 import java.lang.ref.WeakReference;
 

@@ -1,4 +1,4 @@
-package com.mpaas.demo.ui.activity;
+package com.mpaas.demoa.ui.activity;
 
 import android.os.Bundle;
 import android.webkit.WebChromeClient;
@@ -10,7 +10,7 @@ import android.webkit.WebViewClient;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.mpaas.demo.R;
+import com.mpaas.demoa.R;
 
 public class WebActivity extends AppCompatActivity {
 

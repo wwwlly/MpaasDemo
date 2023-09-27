@@ -1,4 +1,4 @@
-package com.mpaas.demo.cube;
+package com.mpaas.demoa.cube;
 
 import com.antfin.cube.antcrystal.api.CubeJSCallback;
 import com.antfin.cube.antcrystal.api.CubeModule;

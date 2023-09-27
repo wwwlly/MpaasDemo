@@ -1,4 +1,4 @@
-package com.mpaas.demo.cube;
+package com.mpaas.demoa.cube;
 
 import android.content.Context;
 import android.view.View;

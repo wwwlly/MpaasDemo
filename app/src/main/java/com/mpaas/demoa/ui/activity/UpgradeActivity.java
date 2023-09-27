@@ -1,4 +1,4 @@
-package com.mpaas.demo.ui.activity;
+package com.mpaas.demoa.ui.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -20,9 +20,9 @@ import com.alipay.mobile.android.security.upgrade.util.UpdateUtils;
 import com.alipay.mobile.android.security.upgrade.util.UpgradeConstants;
 import com.alipay.mobile.framework.MicroApplicationContext;
 import com.alipay.mobileappcommon.biz.rpc.client.upgrade.model.ClientUpgradeRes;
-import com.mpaas.demo.R;
-import com.mpaas.demo.callback.DownloadCallback;
-import com.mpaas.demo.callback.UpgradeCallBack;
+import com.mpaas.demoa.R;
+import com.mpaas.demoa.callback.DownloadCallback;
+import com.mpaas.demoa.callback.UpgradeCallBack;
 import com.mpaas.mpaasadapter.api.upgrade.MPUpgrade;
 
 /**

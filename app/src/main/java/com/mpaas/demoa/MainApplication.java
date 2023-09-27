@@ -1,4 +1,4 @@
-package com.mpaas.demo;
+package com.mpaas.demoa;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -8,8 +8,6 @@ import androidx.multidex.MultiDexApplication;
 
 import com.alipay.mobile.antcube.CubeService;
 import com.alipay.mobile.cubedebug.crystal.CubeCardDebug;
-import com.alipay.mobile.framework.quinoxless.IInitCallback;
-import com.alipay.mobile.framework.quinoxless.QuinoxlessFramework;
 import com.antfin.cube.antcrystal.api.CExceptionInfo;
 import com.antfin.cube.antcrystal.api.CExceptionListener;
 import com.antfin.cube.antcrystal.api.CubeEngineConfig;
@@ -17,8 +15,8 @@ import com.antfin.cube.antcrystal.api.CubeModuleModel;
 import com.antfin.cube.antcrystal.api.CubeWidgetInfo;
 import com.mpaas.core.MP;
 import com.mpaas.core.MPInitParam;
-import com.mpaas.demo.cube.CustomCubeModule;
-import com.mpaas.demo.cube.CustomCubeWidget;
+import com.mpaas.demoa.cube.CustomCubeModule;
+import com.mpaas.demoa.cube.CustomCubeWidget;
 
 import java.util.Collection;
 import java.util.LinkedList;

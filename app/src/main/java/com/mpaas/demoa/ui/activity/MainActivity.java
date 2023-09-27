@@ -1,11 +1,11 @@
-package com.mpaas.demo.ui.activity;
+package com.mpaas.demoa.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 
-import com.mpaas.demo.R;
+import com.mpaas.demoa.R;
 
 public class MainActivity extends AppCompatActivity {
 
