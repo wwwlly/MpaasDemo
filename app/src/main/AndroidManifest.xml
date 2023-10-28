@@ -109,6 +109,30 @@
         <meta-data
             android:name="UCSDKAppKey"
             android:value="JJQ/FLbHKX+ETiFNpCcb0fqjPfQ+JnjGBxDaqUm0MDcNATUVfsVrSh4KHq8of4/pFud/TDgjKf8891LpDlGG4w==" />
+
+        <!--
+        以下在10.2.3基线已集成到日志组件里
+
+        日志的加密公钥
+        <meta-data
+            android:name="setting.logging.encryption.pubkey"
+            android:value="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCpffOiYcozIfgIiaOPWsmfktv7Sl/9Af3mIgYz7vkTXoGq4iMN+t5BLV6KjddVEI/9oLtAYV8qx7FhFrUoi3smcYfX35ETPUiHi1gLizeXKVSRYhIm2kiDF5lGfDgcS7uJZvmKjbdYy/RphnH+WQvQyeEH+4rjYSkdhIRE2W52BwIDAQAB" />
+
+        日志上传所用的 service
+        <service
+            android:name="com.alipay.mobile.common.logging.process.LogServiceInToolsProcess"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":tools" />
+
+        日志诊断相关
+        <service
+            android:name="com.alipay.mobile.logmonitor.ClientMonitorService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":push" />
+        -->
+
     </application>
 
 </manifest>
