@@ -8,6 +8,7 @@ mpaas组件
 - 无线保镖/蓝盾
 - 社交分享
 - 智能投放（Mobile Content Delivery Platform，简称 MCDP）
+- 移动性能监控（Application Performance Management，APM）
 - 统一存储
 - AntUI
 - 扫一扫
@@ -32,7 +33,7 @@ mpaas 分支
 appId: 570DA89281533 或 ALIPUB236B440301354
 
 mpaas_a 分支
-mpaas的测试分之
+mpaas的测试分支
 
 mpaas_my
 账号：0402
