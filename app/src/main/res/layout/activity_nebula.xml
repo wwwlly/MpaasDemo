@@ -22,7 +22,7 @@
             android:id="@+id/radio_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checkedButton="@id/btn_url"
+            android:checkedButton="@id/btn_id"
             android:orientation="horizontal">
 
             <RadioButton
