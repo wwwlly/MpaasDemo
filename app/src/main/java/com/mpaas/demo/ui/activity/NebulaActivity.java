@@ -48,7 +48,7 @@ public class NebulaActivity extends AppCompatActivity {
      * https://mcube.mpaas.accelerate.aliyuncs.com/ALIPUBA1220A9191115-default/77700002/0.0.0.2_all/nebula/fallback/www/index.html
      */
     private void initViews() {
-        editText.setText("77700002");
+        editText.setText("77700001");
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -68,6 +68,7 @@ public class NebulaActivity extends AppCompatActivity {
     }
 
     private void nebulaStart(int type, String text, Bundle bundle) {
+        if (bundle == null) bundle = new Bundle();
         switch (type) {
             case TYPE_APP_ID:
                 MPNebula.startApp(text, bundle);
