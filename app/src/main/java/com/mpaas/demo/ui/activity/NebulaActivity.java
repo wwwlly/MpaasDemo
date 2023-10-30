@@ -18,13 +18,14 @@ import com.mpaas.nebula.adapter.api.MPNebula;
 
 public class NebulaActivity extends AppCompatActivity {
 
+    public static final String TAG = "Nebula";
     private static final int TYPE_APP_ID = 0;
     private static final int TYPE_URL = 1;
 
     private EditText editText;
     private RadioGroup radioGroup;
 
-    private int type = TYPE_URL;
+    private int type = TYPE_APP_ID;
 
     public static void startActivity(Activity activity) {
         Intent intent = new Intent(activity, NebulaActivity.class);
@@ -71,9 +72,11 @@ public class NebulaActivity extends AppCompatActivity {
         if (bundle == null) bundle = new Bundle();
         switch (type) {
             case TYPE_APP_ID:
+                Logger.d(TAG, "startApp appId: " + text);
                 MPNebula.startApp(text, bundle);
                 break;
             case TYPE_URL:
+                Logger.d(TAG, "startUrl url: " + text);
                 MPNebula.startUrl(text, bundle);
                 break;
         }
