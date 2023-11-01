@@ -2,6 +2,7 @@ package com.mpaas.demo;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.util.Log;
 
 import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
@@ -20,8 +21,15 @@ import com.mpaas.core.MPInitParam;
 import com.mpaas.demo.cube.CustomCubeModule;
 import com.mpaas.demo.cube.CustomCubeWidget;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
+
+import io.dcloud.feature.sdk.DCSDKInitConfig;
+import io.dcloud.feature.sdk.DCUniMPSDK;
+import io.dcloud.feature.sdk.Interface.IDCUniMPPreInitCallback;
+import io.dcloud.feature.sdk.MenuActionSheetItem;
 
 public class MainApplication extends MultiDexApplication {
 
@@ -58,6 +66,8 @@ public class MainApplication extends MultiDexApplication {
                 }
             }
         }));
+
+        initUniApp();
 
         MultiDex.install(this);
     }
@@ -102,5 +112,34 @@ public class MainApplication extends MultiDexApplication {
         Collection<CubeWidgetInfo> widgetInfos = new LinkedList<>();
         widgetInfos.add(new CubeWidgetInfo("custom-widget", CustomCubeWidget.class.getName()));
         CubeService.instance().getEngine().registerWidgets(widgetInfos);
+    }
+
+    private void initUniApp() {
+        //初始化 uni小程序SDK ----start----------
+        MenuActionSheetItem item = new MenuActionSheetItem("关于", "gy");
+
+        MenuActionSheetItem item1 = new MenuActionSheetItem("获取当前页面url", "hqdqym");
+        MenuActionSheetItem item2 = new MenuActionSheetItem("跳转到宿主原生测试页面", "gotoTestPage");
+        List<MenuActionSheetItem> sheetItems = new ArrayList<>();
+        sheetItems.add(item);
+        sheetItems.add(item1);
+        sheetItems.add(item2);
+        Log.i("unimp", "onCreate----");
+        DCSDKInitConfig config = new DCSDKInitConfig.Builder()
+                .setCapsule(false)
+                .setMenuDefFontSize("16px")
+                .setMenuDefFontColor("#ff00ff")
+                .setMenuDefFontWeight("normal")
+                .setMenuActionSheetItems(sheetItems)
+                .setEnableBackground(true)//开启后台运行
+                .setUniMPFromRecents(false)
+                .build();
+        DCUniMPSDK.getInstance().initialize(this, config, new IDCUniMPPreInitCallback() {
+            @Override
+            public void onInitFinished(boolean b) {
+                Log.d("unimpaa", "onInitFinished----" + b);
+            }
+        });
+        //初始化 uni小程序SDK ----end----------
     }
 }
