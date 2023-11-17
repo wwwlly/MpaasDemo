@@ -83,7 +83,7 @@ class AnalyticsActivity : BaseAppCompatActivity() {
         // params 为自定义参数，控制台自定义分析中事件的自定义属性对应这些键值对
         // params 可以为空
         val params: MutableMap<String, String> = HashMap()
-        params["time"] = "2018-07-27"
+        params["time"] = "2023-11-17"
 
         // 可调用多个重载方法
 //        MPLogger.event(logId);
