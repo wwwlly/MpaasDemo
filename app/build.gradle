@@ -132,6 +132,12 @@ dependencies {
     //日志
     implementation 'com.mpaas.android:logging'
     annotationProcessor "com.mpaas.mobile:metainfo-compiler:1.3.0"
+    //推送
+    implementation 'com.mpaas.android:push'
+    implementation 'com.mpaas.android:push-hms5'
+    implementation 'com.mpaas.android:push-mi'
+    implementation 'com.mpaas.android:push-oppo'
+    implementation 'com.mpaas.android:push-vivo'
 }
 
 task ('copyTask', type: Copy) {

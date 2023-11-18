@@ -20,6 +20,8 @@ import com.mpaas.core.MP;
 import com.mpaas.core.MPInitParam;
 import com.mpaas.demo.cube.CustomCubeModule;
 import com.mpaas.demo.cube.CustomCubeWidget;
+import com.mpaas.mas.adapter.api.MPLogger;
+import com.mpaas.mps.adapter.api.MPPush;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,6 +34,8 @@ import io.dcloud.feature.sdk.Interface.IDCUniMPPreInitCallback;
 import io.dcloud.feature.sdk.MenuActionSheetItem;
 
 public class MainApplication extends MultiDexApplication {
+
+    public static final String USER_ID = "id_mpaas";
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -64,6 +68,9 @@ public class MainApplication extends MultiDexApplication {
                     //注册自定义标签
                     initWidget();
                 }
+
+                MPPush.init(MainApplication.this);
+//                MPLogger.setUserId(USER_ID);
             }
         }));
 
