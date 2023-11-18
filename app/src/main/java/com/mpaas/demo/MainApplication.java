@@ -70,7 +70,7 @@ public class MainApplication extends MultiDexApplication {
                 }
 
                 MPPush.init(MainApplication.this);
-//                MPLogger.setUserId(USER_ID);
+                MPLogger.setUserId(USER_ID);
             }
         }));
 

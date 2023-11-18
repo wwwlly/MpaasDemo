@@ -14,8 +14,8 @@ class MyPushMsgService : MPPushMsgServiceAdapter() {
 
         fun bindUser(context: Context, token: String?) {
             try {
-                val bindResult = MPPush.bind(context, MainApplication.USER_ID, token)
-//                val bindResult = MPPush.bind(context, token)
+//                val bindResult = MPPush.bind(context, MainApplication.USER_ID, token)
+                val bindResult = MPPush.bind(context, token)
                 if (bindResult.success) {
                     MPLogger.debug(TAG, "绑定userId 成功")
                 } else {
