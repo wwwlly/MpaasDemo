@@ -7,7 +7,7 @@ plugins {
 
 def mfph = [
         //包名
-        "apk.applicationId" : "com.mpaas.demo",
+        "apk.applicationId": "com.mpaas.demo",
 ]
 
 android {
@@ -26,6 +26,23 @@ android {
         }
         multiDexEnabled true
         manifestPlaceholders = mfph
+    }
+
+    flavorDimensions "version"
+    productFlavors {
+        flavorDev {
+            dimension "version"
+            applicationIdSuffix ".flavorDev"
+            manifestPlaceholders = [
+//                    logo = "@mipmap/ic_launcher",
+appName: "MpaasDemoDev"
+            ]
+        }
+
+        flavorProd {
+            dimension "version"
+//            applicationIdSuffix ".flavorProd"
+        }
     }
 
     signingConfigs {
@@ -83,7 +100,7 @@ repositories {
 }
 
 configurations {
-    all*.exclude group:'com.mpaas.commonlib', module: 'libcshared-build'
+    all*.exclude group: 'com.mpaas.commonlib', module: 'libcshared-build'
 }
 
 dependencies {
@@ -140,6 +157,6 @@ dependencies {
     implementation 'com.mpaas.android:push-vivo'
 }
 
-task ('copyTask', type: Copy) {
+task('copyTask', type: Copy) {
 
 }

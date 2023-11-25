@@ -38,9 +38,11 @@ public class MainActivity extends AppCompatActivity implements MainAdapter.OnIte
     private List<MainItemData> getData() {
         List<MainItemData> intentList = new ArrayList<>();
 
+        String packageName = getPackageName();
+        Logger.d("packageName", packageName);
         PackageManager packageManager = getPackageManager();
         Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory("com.mpaas.demo.MAIN_ACTIVITY");
+        intent.addCategory(packageName + ".MAIN_ACTIVITY");
 
         List<ResolveInfo> resolveInfoList = packageManager.queryIntentActivities(intent, 0);
 
