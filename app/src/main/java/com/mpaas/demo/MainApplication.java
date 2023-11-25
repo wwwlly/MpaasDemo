@@ -111,7 +111,7 @@ public class MainApplication extends MultiDexApplication {
 
     private void initModuleModel() {
         Collection<CubeModuleModel> cubeModuleModels = new LinkedList<>();
-        cubeModuleModels.add(new CubeModuleModel("custom", CustomCubeModule.class.getName(), new String[]{"cubeToClient"}));
+        cubeModuleModels.add(new CubeModuleModel("custom", CustomCubeModule.class.getName(), new String[]{"cubeToClient", "httpRequest"}));
         CubeService.instance().getEngine().registerModule(cubeModuleModels, null);
     }
 

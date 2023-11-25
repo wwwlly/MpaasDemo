@@ -121,6 +121,10 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".ui.activity.AntCubPageActivity"
+            android:label="AntCubePage" />
+
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
