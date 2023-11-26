@@ -44,7 +44,7 @@ public class AntCubPageActivity extends AppCompatActivity {
         // 创建卡片配置
         CubeCardConfig cardConfig = new CubeCardConfig();
         // 后台创建的卡片 ID
-        cardConfig.setTemplateId("202306140001");
+        cardConfig.setTemplateId("ant-cube-demo");
         // 卡片版本
         cardConfig.setVersion("0.0.0.1");
         // 卡片宽度，这里选取屏幕宽度

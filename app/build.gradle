@@ -42,6 +42,10 @@ appName: "MpaasDemoDev"
         flavorProd {
             dimension "version"
 //            applicationIdSuffix ".flavorProd"
+            manifestPlaceholders = [
+//                    logo = "@mipmap/ic_launcher",
+appName: "MpaasDemo"
+            ]
         }
     }
 
