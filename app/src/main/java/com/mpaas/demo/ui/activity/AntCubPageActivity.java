@@ -46,7 +46,7 @@ public class AntCubPageActivity extends AppCompatActivity {
         // 后台创建的卡片 ID
         cardConfig.setTemplateId("ant-cube-demo");
         // 卡片版本
-        cardConfig.setVersion("0.0.0.1");
+        cardConfig.setVersion("0.0.0.2");
         // 卡片宽度，这里选取屏幕宽度
         cardConfig.setWidth(MFSystemInfo.getPortraitScreenWidth());
         // 卡片数据（用于渲染卡片的数据，一般是 mock.json 里面的内容）
