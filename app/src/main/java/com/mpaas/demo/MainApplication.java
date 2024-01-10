@@ -11,6 +11,8 @@ import com.alipay.mobile.antcube.CubeService;
 import com.alipay.mobile.cubedebug.crystal.CubeCardDebug;
 import com.alipay.mobile.framework.quinoxless.IInitCallback;
 import com.alipay.mobile.framework.quinoxless.QuinoxlessFramework;
+import com.alipay.mobile.nebula.provider.H5AppCenterPresetProvider;
+import com.alipay.mobile.nebula.util.H5Utils;
 import com.antfin.cube.antcrystal.api.CExceptionInfo;
 import com.antfin.cube.antcrystal.api.CExceptionListener;
 import com.antfin.cube.antcrystal.api.CubeEngineConfig;
@@ -22,6 +24,8 @@ import com.mpaas.demo.cube.CustomCubeModule;
 import com.mpaas.demo.cube.CustomCubeWidget;
 import com.mpaas.mas.adapter.api.MPLogger;
 import com.mpaas.mps.adapter.api.MPPush;
+import com.mpaas.mriver.api.init.MriverInitParam;
+import com.mpaas.tinyappcommonres.TinyAppCenterPresetProvider;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -54,7 +58,17 @@ public class MainApplication extends MultiDexApplication {
         super.onCreate();
         // mPaaS 初始化。
 //        QuinoxlessFramework.init();
-        MP.init(this, MPInitParam.obtain().setCallback(new MPInitParam.MPCallback() {
+        MP.init(this, MPInitParam.obtain().addComponentInitParam(new MriverInitParam().setMriverInitCallback(new MriverInitParam.MriverInitCallback() {
+            @Override
+            public void onInit() {
+                H5Utils.setProvider(H5AppCenterPresetProvider.class.getName(),new TinyAppCenterPresetProvider());
+            }
+
+            @Override
+            public void onError(Exception e) {
+
+            }
+        })).setCallback(new MPInitParam.MPCallback() {
             @Override
             public void onInit() {
                 boolean isMainProcess = getApplicationContext().getPackageName().equals(getCurrentProcessName());
