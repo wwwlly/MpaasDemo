@@ -162,6 +162,8 @@ dependencies {
     implementation 'com.mpaas.android:push-mi'
     implementation 'com.mpaas.android:push-oppo'
     implementation 'com.mpaas.android:push-vivo'
+    //开关配置
+    implementation 'com.mpaas.android:configservice'
 }
 
 task('copyTask', type: Copy) {

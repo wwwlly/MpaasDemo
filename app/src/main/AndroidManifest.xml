@@ -122,6 +122,16 @@
         </activity>
 
         <activity
+            android:name=".ui.activity.ConfigServiceActivity"
+            android:label="ConfigService">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="${applicationId}.MAIN_ACTIVITY" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".ui.activity.AntCubPageActivity"
             android:label="AntCubePage" />
 
