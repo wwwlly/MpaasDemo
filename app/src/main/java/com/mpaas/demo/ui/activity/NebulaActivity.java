@@ -49,7 +49,7 @@ public class NebulaActivity extends AppCompatActivity {
      * https://mcube.mpaas.accelerate.aliyuncs.com/ALIPUBA1220A9191115-default/77700002/0.0.0.2_all/nebula/fallback/www/index.html
      */
     private void initViews() {
-        editText.setText("77700001");
+        editText.setText("https://www.baidu.com");
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
