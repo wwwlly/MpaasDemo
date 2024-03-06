@@ -20,6 +20,8 @@ public class WebActivity extends AppCompatActivity {
 
     private WebView webView;
 
+    private boolean isLocal = false;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +32,13 @@ public class WebActivity extends AppCompatActivity {
         initWebView();
 
         String url = getIntent().getStringExtra("url");
+        isLocal = getIntent().getBooleanExtra("isLocal", false);
         //"https://www.baidu.com"
-        webView.loadUrl(url);
+        if (isLocal) {
+            webView.loadUrl("file:///android_asset/h5/test.html");
+        } else {
+            webView.loadUrl(url);
+        }
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -60,6 +67,6 @@ public class WebActivity extends AppCompatActivity {
         }
 
         webView.setWebViewClient(new MyWebViewClient());
-//        webView.setWebChromeClient(new MyWebChromeClient());
+        webView.setWebChromeClient(new MyWebChromeClient());
     }
 }

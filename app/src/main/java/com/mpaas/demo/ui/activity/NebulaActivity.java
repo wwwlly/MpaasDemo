@@ -21,6 +21,7 @@ public class NebulaActivity extends AppCompatActivity {
     public static final String TAG = "Nebula";
     private static final int TYPE_APP_ID = 0;
     private static final int TYPE_URL = 1;
+    private static final int TYPE_LOCAL = 2;
 
     private EditText editText;
     private RadioGroup radioGroup;
@@ -60,6 +61,9 @@ public class NebulaActivity extends AppCompatActivity {
                         break;
                     case R.id.btn_url:
                         type = TYPE_URL;
+                        break;
+                    case R.id.btn_local:
+                        type = TYPE_LOCAL;
                         break;
                 }
 
@@ -113,6 +117,7 @@ public class NebulaActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, WebActivity.class);
         intent.putExtra("url", text);
+        intent.putExtra("isLocal", type == TYPE_LOCAL);
         startActivity(intent);
     }
 }

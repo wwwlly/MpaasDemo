@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <h2>原始h5，不含mPaas相关api</h2>
+    <button id="btn_test1" class="btn test">测试id</button>
+    <button id="btn_test2" class="btn test2">测试class</button>
+
+    <script>
+        document.getElementById('btn_test1').addEventListener("click", function() {
+            alert("test click id");
+        });
+
+        //注意：查找类选择器时，前面有"."且不能含空格，如".btn test2"则无法找到相应的元素
+        document.querySelector('.test2').addEventListener("click", function() {
+            alert("test click class");
+        });
+    </script>
+</body>
+</html>
