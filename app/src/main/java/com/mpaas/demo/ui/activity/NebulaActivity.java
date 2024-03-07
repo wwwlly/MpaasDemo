@@ -7,14 +7,17 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alipay.mobile.antui.basic.AUToast;
 import com.alipay.mobile.h5container.api.H5Param;
 import com.mpaas.demo.R;
 import com.mpaas.demo.utils.Logger;
 import com.mpaas.nebula.adapter.api.MPNebula;
+import com.mpaas.nebula.adapter.api.MpaasNebulaUpdateCallback;
 
 public class NebulaActivity extends AppCompatActivity {
 
@@ -50,7 +53,8 @@ public class NebulaActivity extends AppCompatActivity {
      * https://mcube.mpaas.accelerate.aliyuncs.com/ALIPUBA1220A9191115-default/77700002/0.0.0.2_all/nebula/fallback/www/index.html
      */
     private void initViews() {
-        editText.setText("https://www.baidu.com");
+//        editText.setText("https://www.baidu.com");
+        editText.setText("77700001");
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -115,9 +119,31 @@ public class NebulaActivity extends AppCompatActivity {
             return;
         }
 
+        if (type == TYPE_APP_ID) {
+            Logger.d("type is appId");
+            Toast.makeText(this, "type is appId", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         Intent intent = new Intent(this, WebActivity.class);
         intent.putExtra("url", text);
         intent.putExtra("isLocal", type == TYPE_LOCAL);
         startActivity(intent);
+    }
+
+    public void onClickNebulaUpdata(View view) {
+        MPNebula.updateAllApp(new MpaasNebulaUpdateCallback() {
+            @Override
+            public void onResult(final boolean success, final boolean isLimit) {
+                super.onResult(success, isLimit);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        AUToast.makeToast(NebulaActivity.this,
+                                success ? R.string.update_success : R.string.update_failure, 2000).show();
+                    }
+                });
+            }
+        });
     }
 }

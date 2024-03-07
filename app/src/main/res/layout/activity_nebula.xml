@@ -66,6 +66,13 @@
             android:onClick="onClickWebView"
             android:text="Android WebView打开"
             android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickNebulaUpdata"
+            android:text="更新指定离线包"
+            android:textAllCaps="false" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.core.widget.NestedScrollView>

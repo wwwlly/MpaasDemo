@@ -71,4 +71,7 @@
     <string name="automation_view1">AUTextView1</string>
     <string name="automation_view2">AUTextView2</string>
     <string name="automation_scroll_tips">向下滚动依次展现更多View</string>
+
+    <string name="update_success">更新成功</string>
+    <string name="update_failure">更新失败</string>
 </resources>
