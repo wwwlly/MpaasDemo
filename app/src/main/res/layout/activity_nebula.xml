@@ -70,8 +70,15 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickNebulaUpdata"
+            android:onClick="onClickNebulaUpdate"
             android:text="更新指定离线包"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickCustomH5View"
+            android:text="自定义标题栏"
             android:textAllCaps="false" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 

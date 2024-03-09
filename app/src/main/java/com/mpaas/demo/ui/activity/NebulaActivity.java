@@ -7,16 +7,15 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alipay.mobile.antui.basic.AUToast;
-import com.alipay.mobile.h5container.api.H5Param;
 import com.mpaas.demo.R;
+import com.mpaas.demo.nebula.NebulaApi;
 import com.mpaas.demo.utils.Logger;
-import com.mpaas.nebula.adapter.api.MPNebula;
+import com.mpaas.demo.utils.ToastUtils;
 import com.mpaas.nebula.adapter.api.MpaasNebulaUpdateCallback;
 
 public class NebulaActivity extends AppCompatActivity {
@@ -30,6 +29,20 @@ public class NebulaActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
 
     private int type = TYPE_APP_ID;
+
+    private MpaasNebulaUpdateCallback updateCallback = new MpaasNebulaUpdateCallback() {
+        @Override
+        public void onResult(final boolean success, final boolean isLimit) {
+            super.onResult(success, isLimit);
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    AUToast.makeToast(NebulaActivity.this,
+                            success ? R.string.update_success : R.string.update_failure, 2000).show();
+                }
+            });
+        }
+    };
 
     public static void startActivity(Activity activity) {
         Intent intent = new Intent(activity, NebulaActivity.class);
@@ -53,8 +66,8 @@ public class NebulaActivity extends AppCompatActivity {
      * https://mcube.mpaas.accelerate.aliyuncs.com/ALIPUBA1220A9191115-default/77700002/0.0.0.2_all/nebula/fallback/www/index.html
      */
     private void initViews() {
-//        editText.setText("https://www.baidu.com");
-        editText.setText("77700001");
+        editText.setText("https://www.baidu.com");
+//        editText.setText("77700001");
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -81,11 +94,11 @@ public class NebulaActivity extends AppCompatActivity {
         switch (type) {
             case TYPE_APP_ID:
                 Logger.d(TAG, "startApp appId: " + text);
-                MPNebula.startApp(text, bundle);
+                NebulaApi.startApp(text, bundle);
                 break;
             case TYPE_URL:
                 Logger.d(TAG, "startUrl url: " + text);
-                MPNebula.startUrl(text, bundle);
+                NebulaApi.startUrl(text, bundle);
                 break;
         }
     }
@@ -101,7 +114,7 @@ public class NebulaActivity extends AppCompatActivity {
     }
 
     public void onClickNebulaChrome(View view) {
-        String text = editText.getText().toString();
+        /*String text = editText.getText().toString();
         if (TextUtils.isEmpty(text)) {
             Logger.d("editText is empty");
             return;
@@ -109,7 +122,10 @@ public class NebulaActivity extends AppCompatActivity {
 
         Bundle bundle = new Bundle();
         bundle.putBoolean(H5Param.USE_SYS_WEBVIEW, false);
-        nebulaStart(type, text, bundle);
+        nebulaStart(type, text, bundle);*/
+
+        NebulaApi.setMPAndroidWebChromeClient();
+        ToastUtils.INSTANCE.showToast(this, "android系统内核");
     }
 
     public void onClickWebView(View view) {
@@ -121,7 +137,7 @@ public class NebulaActivity extends AppCompatActivity {
 
         if (type == TYPE_APP_ID) {
             Logger.d("type is appId");
-            Toast.makeText(this, "type is appId", Toast.LENGTH_LONG).show();
+            ToastUtils.INSTANCE.showToast(this, "type is appId");
             return;
         }
 
@@ -131,19 +147,18 @@ public class NebulaActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickNebulaUpdata(View view) {
-        MPNebula.updateAllApp(new MpaasNebulaUpdateCallback() {
-            @Override
-            public void onResult(final boolean success, final boolean isLimit) {
-                super.onResult(success, isLimit);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        AUToast.makeToast(NebulaActivity.this,
-                                success ? R.string.update_success : R.string.update_failure, 2000).show();
-                    }
-                });
-            }
-        });
+    public void onClickNebulaUpdate(View view) {
+//        NebulaApi.updateAllApp();
+
+        if (type == TYPE_APP_ID) {
+            String text = editText.getText().toString();
+            NebulaApi.updateApp(text, updateCallback);
+        }
+    }
+
+
+    public void onClickCustomH5View(View view) {
+        NebulaApi.setCustomView();
+        ToastUtils.INSTANCE.showToast(this, "自定义h5 View");
     }
 }
