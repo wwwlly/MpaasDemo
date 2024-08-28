@@ -1,6 +1,7 @@
 package com.mpaas.demo.ui.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import com.mpaas.demo.R;
 
 import java.util.HashMap;
 
+import io.dcloud.PandoraEntry;
 import io.dcloud.feature.sdk.DCUniMPSDK;
 import io.dcloud.feature.sdk.Interface.IDCUniMPOnCapsuleCloseButtontCallBack;
 import io.dcloud.feature.sdk.Interface.IUniMP;
@@ -50,7 +52,12 @@ public class UniAppActivity extends AppCompatActivity {
         });
     }
 
-    public void onClickDemo(View view) {
+    public void onClickUniApp(View view) {
+        Intent intent = new Intent(this, PandoraEntry.class);
+        startActivity(intent);
+    }
+
+    public void onClickMiniApp(View view) {
         try {
 //            UniMPOpenConfiguration uniMPOpenConfiguration = new UniMPOpenConfiguration();
 //            uniMPOpenConfiguration.splashClass = MySplashView.class;

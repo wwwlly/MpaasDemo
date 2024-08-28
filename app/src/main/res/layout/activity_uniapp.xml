@@ -15,8 +15,16 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickDemo"
-            android:text="UniApp Demo"
+            android:onClick="onClickUniApp"
+            android:text="UniApp 离线包"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="onClickMiniApp"
+            android:text="UniApp 小程序"
             android:textAllCaps="false" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

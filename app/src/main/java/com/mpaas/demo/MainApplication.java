@@ -32,12 +32,13 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import io.dcloud.application.DCloudApplication;
 import io.dcloud.feature.sdk.DCSDKInitConfig;
 import io.dcloud.feature.sdk.DCUniMPSDK;
 import io.dcloud.feature.sdk.Interface.IDCUniMPPreInitCallback;
 import io.dcloud.feature.sdk.MenuActionSheetItem;
 
-public class MainApplication extends MultiDexApplication {
+public class MainApplication extends DCloudApplication {
 
     public static final String USER_ID = "id_mpaas";
 
